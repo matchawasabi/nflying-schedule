@@ -38,10 +38,10 @@ def get(url):
         return ""
 
 def clean(s):
-    return re.sub(r"\\s+", " ", s or "").strip()
+    return re.sub(r"\s+", " ", s or "").strip()
 
 def parse_time(text):
-    m = re.search(r"(?<!\\d)([01]?\\d|2[0-3]):([0-5]\\d)(?!\\d)", text)
+    m = re.search(r"(?<!\d)([01]?\d|2[0-3]):([0-5]\d)(?!\d)", text)
     return f"{int(m.group(1)):02d}:{m.group(2)}" if m else ""
 
 def event_id(date, title):
@@ -61,7 +61,7 @@ def fetch_fnc():
         day_urls = {}
         for a in soup.select("a[href]"):
             href = urljoin(FNC, a.get("href", ""))
-            m = re.search(r"(?:year=(\\d{4}).*?month=(\\d{1,2}).*?day=(\\d{1,2})|/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2}))", href)
+            m = re.search(r"(?:year=(\d{4}).*?month=(\d{1,2}).*?day=(\d{1,2})|/([0-9]{4})/([0-9]{1,2})/([0-9]{1,2}))", href)
             if m:
                 vals = m.groups()
                 y, mo, d = (int(vals[i] or vals[i+3]) for i in range(3))
@@ -107,7 +107,7 @@ def fetch_japan():
                     if not isinstance(item, dict): continue
                     start = item.get("startDate", "")
                     title = clean(item.get("name", ""))
-                    m = re.match(r"(\\d{4})-(\\d{2})-(\\d{2})", start)
+                    m = re.match(r"(\d{4})-(\d{2})-(\d{2})", start)
                     if m and title:
                         date = "-".join(m.groups())
                         found.append({"id": event_id(date,title), "date":date, "time":"",
@@ -119,7 +119,7 @@ def fetch_japan():
         # Preserve source references that need manual parsing.
         for node in soup.select("article, .schedule, .schedule-list li, .news-list li"):
             text = clean(node.get_text(" ", strip=True))
-            if re.search(r"20\\d{2}[./年-]\\d{1,2}[./月-]\\d{1,2}", text):
+            if re.search(r"20\d{2}[./年-]\d{1,2}[./月-]\d{1,2}", text):
                 review.append({"source":url, "reason":"日本官网存在日期内容，需人工确认结构", "excerpt":text[:400]})
     return found, unreadable, review
 
@@ -162,19 +162,19 @@ def main():
         "unreadable_sources":sorted(set(unreadable + ["X（@NFlyingofficial、@NF_official_jp）","Instagram","Weverse","YouTube（未配置官方 API）"])),
         "events":events
     }
-    DATA.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    DATA.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     REPORTS.mkdir(exist_ok=True)
     report = {"generated_at":data["updated"],"official_entries_seen":len(official),
               "unreadable_sources":data["unreadable_sources"],"manual_review":review,
               "change_count":len(changes),
               "note":"本版本仅自动解析官方网页中可识别的明确日期与标题；待人工核实内容不会自动写入日历。"}
-    (REPORTS/"latest.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\\n",encoding="utf-8")
+    (REPORTS/"latest.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     # Keep original design/template when supplied; otherwise create a small
     # accessible fallback page that reads data.json.
     template = ROOT/"tpl"/"index.html"
     if template.exists():
         html=template.read_text(encoding="utf-8")
-        payload=json.dumps(data,ensure_ascii=False,separators=(",",":")).replace("</","<\\/")
+        payload=json.dumps(data,ensure_ascii=False,separators=(",",":")).replace("</","<\/")
         if "/*NF_DATA*/" in html:
             html=html.replace("/*NF_DATA*/",payload)
         (ROOT/"index.html").write_text(html,encoding="utf-8")
