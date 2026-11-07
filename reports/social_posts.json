@@ -1,0 +1,10 @@
+{
+  "fetched_at": "2026-11-07T15:03:46+00:00",
+  "posts_count": 0,
+  "posts": [],
+  "candidates": [],
+  "errors": [
+    "未配置 GitHub Secret：X_BEARER_TOKEN",
+    "未配置 GitHub Secrets：META_ACCESS_TOKEN / META_IG_USER_ID"
+  ]
+}

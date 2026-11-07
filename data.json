@@ -1,26 +1,80 @@
 {
-  "updated": "2026-11-07T10:19:47+08:00",
-  "updated_label": "2026-11-07 10:19 北京时间",
+  "updated": "2026-11-07T23:03:46+08:00",
+  "updated_label": "2026-11-07 23:03 北京时间",
   "changes": [
     {
-      "id": "2027-01-08-surabaya",
-      "kind": "changed",
-      "text": "补全官方信息：泗水场演出时间为当地19:00，场馆为 JAWA POS ARENA。"
+      "id": "2026-11-03-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-03 FNC Official Twitter"
     },
     {
-      "id": "2027-01-10-jakarta",
-      "kind": "changed",
-      "text": "补全官方信息：雅加达场演出时间为当地19:00，场馆为 GBK BASKET HALL SENAYAN。"
+      "id": "2026-11-04-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-04 FNC Official Twitter"
+    },
+    {
+      "id": "2026-11-05-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-05 FNC Official Twitter"
+    },
+    {
+      "id": "2026-11-07-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-07 FNC Official Twitter"
+    },
+    {
+      "id": "2026-11-08-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-08 FNC Official Twitter"
+    },
+    {
+      "id": "2026-11-10-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-10 FNC Official Twitter"
+    },
+    {
+      "id": "2026-11-11-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-11 FNC Official Twitter"
+    },
+    {
+      "id": "2026-11-12-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-12 FNC Official Twitter"
+    },
+    {
+      "id": "2026-11-14-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-14 FNC Official Twitter"
+    },
+    {
+      "id": "2026-11-15-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-15 FNC Official Twitter"
+    },
+    {
+      "id": "2026-11-17-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-17 FNC Official Twitter"
+    },
+    {
+      "id": "2026-11-18-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-18 FNC Official Twitter"
+    },
+    {
+      "id": "2026-11-21-fnc-official-twitter",
+      "kind": "new",
+      "text": "新增官方行程：2026-11-21 FNC Official Twitter"
     }
   ],
-  "changes_note": "本次核对官方来源后，补全2场2027年海外演唱会的时间及场馆；其余已收录行程未发现需要新增的官方确认项目。",
+  "changes_note": "",
   "unreadable_sources": [
-    "X（@NFlyingofficial、@NF_official_jp）：本次未能直接读取",
-    "Instagram：本次未能直接读取",
-    "Weverse：本次未能直接读取",
-    "YouTube：本次未检索到可稳定读取的官方行程列表"
+    "官方 Weverse（需先核验官方社区入口并接入读取方式）",
+    "官方 YouTube（未配置官方 API）",
+    "未配置 GitHub Secrets：META_ACCESS_TOKEN / META_IG_USER_ID",
+    "未配置 GitHub Secret：X_BEARER_TOKEN"
   ],
-  "scrape_scope": "2026-11-07 单次核查：FNC 韩国官网行程与公告、N.Flying 日本官网；社交媒体未能稳定读取。",
   "events": [
     {
       "id": "2026-10-31-tokyo",
@@ -41,6 +95,25 @@
       ],
       "short": "东京 &CON5",
       "note": "同日为李承协生日"
+    },
+    {
+      "id": "2026-11-03-fnc-official-twitter",
+      "date": "2026-11-03",
+      "time": "07:00",
+      "tz": "KST",
+      "bj": "06:00",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=03&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
     },
     {
       "id": "2026-11-03-vc",
@@ -81,6 +154,25 @@
       "short": "线下签售会"
     },
     {
+      "id": "2026-11-04-fnc-official-twitter",
+      "date": "2026-11-04",
+      "time": "10:50",
+      "tz": "KST",
+      "bj": "09:50",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=04&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
+    },
+    {
       "id": "2026-11-04-ebs",
       "date": "2026-11-04",
       "time": "22:50",
@@ -98,6 +190,25 @@
         }
       ],
       "short": "EBS 空间共鸣"
+    },
+    {
+      "id": "2026-11-05-fnc-official-twitter",
+      "date": "2026-11-05",
+      "time": "07:00",
+      "tz": "KST",
+      "bj": "06:00",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=05&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
     },
     {
       "id": "2026-11-05-vc",
@@ -157,6 +268,25 @@
       "short": "圣诞场一般预售"
     },
     {
+      "id": "2026-11-07-fnc-official-twitter",
+      "date": "2026-11-07",
+      "time": "02:30",
+      "tz": "KST",
+      "bj": "01:30",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=07&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
+    },
+    {
       "id": "2026-11-07-fbk-taipei",
       "date": "2026-11-07",
       "time": "14:30",
@@ -177,6 +307,25 @@
       "city": "台北"
     },
     {
+      "id": "2026-11-08-fnc-official-twitter",
+      "date": "2026-11-08",
+      "time": "02:30",
+      "tz": "KST",
+      "bj": "01:30",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=08&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
+    },
+    {
       "id": "2026-11-08-fbk-taipei",
       "date": "2026-11-08",
       "time": "14:30",
@@ -195,6 +344,25 @@
       ],
       "short": "台北 BAND KINGDOM",
       "city": "台北"
+    },
+    {
+      "id": "2026-11-10-fnc-official-twitter",
+      "date": "2026-11-10",
+      "time": "07:00",
+      "tz": "KST",
+      "bj": "06:00",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=10&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
     },
     {
       "id": "2026-11-10-vc",
@@ -233,6 +401,25 @@
         }
       ],
       "short": "线下签售会"
+    },
+    {
+      "id": "2026-11-11-fnc-official-twitter",
+      "date": "2026-11-11",
+      "time": "07:00",
+      "tz": "KST",
+      "bj": "06:00",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=11&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
     },
     {
       "id": "2026-11-11-vc",
@@ -292,23 +479,23 @@
       "short": "一直娱 视频签售"
     },
     {
-      "id": "2026-11-12-vc",
+      "id": "2026-11-12-fnc-official-twitter",
       "date": "2026-11-12",
-      "time": "19:00",
+      "time": "07:00",
       "tz": "KST",
-      "bj": "18:00",
-      "cat": "sign_online",
-      "title": "9th Mini [Still] 1:1 视频通话签售",
-      "venue": "线上",
+      "bj": "06:00",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
       "ticket": "",
       "status": "confirmed",
       "sources": [
         {
-          "label": "FNC 官方行程/公告",
-          "url": "https://fncent.com/NFLYING/b/schedule"
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=12&admin_select_mc_id_cate=&admin_select_mc_id=#det"
         }
-      ],
-      "short": "1:1 视频签售"
+      ]
     },
     {
       "id": "2026-11-12-kingdom-tix",
@@ -330,6 +517,25 @@
       "short": "FNC KINGDOM 开票"
     },
     {
+      "id": "2026-11-12-vc",
+      "date": "2026-11-12",
+      "time": "19:00",
+      "tz": "KST",
+      "bj": "18:00",
+      "cat": "sign_online",
+      "title": "9th Mini [Still] 1:1 视频通话签售",
+      "venue": "线上",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官方行程/公告",
+          "url": "https://fncent.com/NFLYING/b/schedule"
+        }
+      ],
+      "short": "1:1 视频签售"
+    },
+    {
       "id": "2026-11-12-photo",
       "date": "2026-11-12",
       "time": "20:00",
@@ -347,6 +553,25 @@
         }
       ],
       "short": "1:1 拍照活动"
+    },
+    {
+      "id": "2026-11-14-fnc-official-twitter",
+      "date": "2026-11-14",
+      "time": "04:00",
+      "tz": "KST",
+      "bj": "03:00",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=14&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
     },
     {
       "id": "2026-11-14-awesome-busan",
@@ -370,6 +595,25 @@
       "note": "与 Hi-Fi Un!corn 的联合公演"
     },
     {
+      "id": "2026-11-15-fnc-official-twitter",
+      "date": "2026-11-15",
+      "time": "03:00",
+      "tz": "KST",
+      "bj": "02:00",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=15&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
+    },
+    {
       "id": "2026-11-15-awesome-busan",
       "date": "2026-11-15",
       "time": "15:00",
@@ -389,6 +633,25 @@
       "short": "釜山 × Hi-Fi Un!corn",
       "city": "釜山",
       "note": "与 Hi-Fi Un!corn 的联合公演"
+    },
+    {
+      "id": "2026-11-17-fnc-official-twitter",
+      "date": "2026-11-17",
+      "time": "07:00",
+      "tz": "KST",
+      "bj": "06:00",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=17&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
     },
     {
       "id": "2026-11-17-vc",
@@ -429,6 +692,25 @@
       "short": "线下签售会"
     },
     {
+      "id": "2026-11-18-fnc-official-twitter",
+      "date": "2026-11-18",
+      "time": "07:00",
+      "tz": "KST",
+      "bj": "06:00",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=18&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
+    },
+    {
       "id": "2026-11-18-vc",
       "date": "2026-11-18",
       "time": "19:00",
@@ -465,6 +747,25 @@
         }
       ],
       "short": "线下签售会"
+    },
+    {
+      "id": "2026-11-21-fnc-official-twitter",
+      "date": "2026-11-21",
+      "time": "06:00",
+      "tz": "KST",
+      "bj": "05:00",
+      "cat": "other",
+      "title": "FNC Official Twitter",
+      "short": "FNC Official",
+      "venue": "",
+      "ticket": "",
+      "status": "confirmed",
+      "sources": [
+        {
+          "label": "FNC 官网日历",
+          "url": "https://www.fncent.com/?m=bbs&bid=schedule&mod=list&r=NFLYING&year=2026&month=11&day=21&admin_select_mc_id_cate=&admin_select_mc_id=#det"
+        }
+      ]
     },
     {
       "id": "2026-11-21-kaohsiung",
