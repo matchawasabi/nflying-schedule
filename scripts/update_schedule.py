@@ -131,6 +131,21 @@ def main():
     official, unreadable, review = [], [], []
     a,b,c = fetch_fnc(); official += a; unreadable += b; review += c
     a,b,c = fetch_japan(); official += a; unreadable += b; review += c
+    # Ingest explicit-date candidates from official X/Instagram API fetch.
+    social_file = REPORTS / "social_posts.json"
+    social_errors = []
+    if social_file.exists():
+        try:
+            social = json.loads(social_file.read_text(encoding="utf-8"))
+            for e in social.get("candidates", []):
+                e = {k:v for k,v in e.items() if not k.startswith("_")}
+                e["id"] = event_id(e["date"], e["title"])
+                official.append(e)
+            social_errors = social.get("errors", [])
+        except Exception as exc:
+            social_errors = [f"社交平台抓取结果解析失败：{exc}"]
+    else:
+        social_errors = ["本轮尚未生成官方 X/Instagram 抓取结果"]
 
     # Existing data remains the baseline; refresh matching IDs with current
     # official records. This avoids deleting future dates if a source is down.
@@ -159,7 +174,7 @@ def main():
         "updated_label":now.strftime("%Y-%m-%d %H:%M 北京时间"),
         "changes":changes,
         "changes_note":"本次未发现新增或变更。" if not changes else "",
-        "unreadable_sources":sorted(set(unreadable + ["官方 X（@NFlyingofficial：本脚本尚未接入稳定读取方式）","官方 Instagram（@letsroll_nf：本脚本尚未接入稳定读取方式）","官方 Weverse（需先核验官方社区入口并接入读取方式）","官方 YouTube（未配置官方 API）"])),
+        "unreadable_sources":sorted(set(unreadable + social_errors + ["官方 Weverse（需先核验官方社区入口并接入读取方式）","官方 YouTube（未配置官方 API）"])),
         "events":events
     }
     DATA.write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
@@ -167,7 +182,8 @@ def main():
     report = {"generated_at":data["updated"],"official_entries_seen":len(official),
               "unreadable_sources":data["unreadable_sources"],"manual_review":review,
               "change_count":len(changes),
-              "note":"本版本仅自动解析官方网页中可识别的明确日期与标题；官方 X/Instagram/Weverse 尚未接入抓取。第三方非官方信息须至少两个独立原始来源印证；同源转载不计多方。待人工核实内容不会自动写入日历。",\n              "verification_policy":{"official_single_source_allowed":True,"official_social_platforms":["X","Instagram","Weverse"],"third_party_min_independent_sources":2,"syndicated_or_reposted_same_origin_counts_as":1,"single_non_official_source_status":"pending_verification","policy_file":"SOURCE_POLICY.md"} }
+              "note":"本版本自动解析官方网页和已配置的官方 X/Instagram 接口；第三方非官方信息须至少两个独立原始来源印证；同源转载不计多方。待人工核实内容不会自动写入日历。",
+              "verification_policy":{"official_single_source_allowed":True,"official_social_platforms":["X","Instagram","Weverse"],"third_party_min_independent_sources":2,"syndicated_or_reposted_same_origin_counts_as":1,"single_non_official_source_status":"pending_verification","policy_file":"SOURCE_POLICY.md"} }
     (REPORTS/"latest.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     # Keep original design/template when supplied; otherwise create a small
     # accessible fallback page that reads data.json.
