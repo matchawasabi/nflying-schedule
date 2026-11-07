@@ -135,11 +135,14 @@ def main():
             # Retain the complete official post text as the title/evidence.
             # Human review is required before splitting multi-day ranges or
             # interpreting relative dates, time zones, and ticket details.
+            title = next((re.sub(r"\s+"," ",line).strip() for line in txt.splitlines() if line.strip()), re.sub(r"\s+"," ",txt).strip())
+            title = title[:110]
+            cat = "sign_online" if re.search(r"(sign|영통|영상통화|팬사인회|サイン会)", txt, re.I) else ("fanmeeting" if re.search(r"(fan.?meeting|팬미팅|ファンミ)", txt, re.I) else "concert")
             for date in dates:
                 candidates.append({
-                    "date":date, "title":re.sub(r"\s+"," ",txt).strip()[:180],
+                    "date":date, "title":title,
                     "time":"", "tz":"KST" if p["platform"]=="X" else "JST",
-                    "bj":"", "cat":"concert", "venue":"", "ticket":"",
+                    "bj":"", "cat":cat, "venue":"", "ticket":"",
                     "status":"confirmed", "short":"官方社媒行程",
                     "sources":[{"label":f"官方{p['platform']} {p['account']}",
                                 "url":p["url"], "published_at":created,
