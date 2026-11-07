@@ -1,0 +1,44 @@
+name: Update N.Flying schedule
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 09:37 and 16:37 China Standard Time (UTC+8)
+    - cron: "37 1,8 * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: nflying-schedule-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Fetch official schedules and rebuild calendar
+        run: python scripts/update_schedule.py
+      - name: Commit updated data and site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json index.html reports/
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update N.Flying schedule"
+            git push
+          fi
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
