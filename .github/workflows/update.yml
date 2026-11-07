@@ -2,6 +2,9 @@ name: Update N.Flying schedule
 
 on:
   workflow_dispatch:
+  schedule:
+    # 09:37 and 16:37 Beijing time (UTC+8)
+    - cron: "37 1,8 * * *"
 
 permissions:
   contents: write
@@ -15,13 +18,20 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    env:
+      X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+      META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+      META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+      META_GRAPH_VERSION: ${{ vars.META_GRAPH_VERSION || 'v24.0' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Fetch official schedules and rebuild calendar
+      - name: Fetch official X and Instagram posts
+        run: python scripts/fetch_social.py
+      - name: Fetch official website schedules and merge social evidence
         run: python scripts/update_schedule.py
       - name: Commit updated data and site
         run: |
