@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-11-07T10:19:47+08:00",
+  "scope": [
+    "FNC N.Flying Korea schedule",
+    "FNC N.Flying notices",
+    "N.Flying Japan official website"
+  ],
+  "baseline_event_count": 32,
+  "changes": [
+    {
+      "date": "2027-01-08",
+      "event": "2027 N.Flying LIVE '&CON5 : into REM' IN SURABAYA",
+      "local_time": "19:00 WIB",
+      "beijing_time": "20:00",
+      "venue": "JAWA POS ARENA",
+      "official_source": "https://fncent.com/b/notice/66721",
+      "result": "已补全此前缺失的演出时间和场馆"
+    },
+    {
+      "date": "2027-01-10",
+      "event": "2027 N.Flying LIVE '&CON5 : into REM' IN JAKARTA",
+      "local_time": "19:00 WIB",
+      "beijing_time": "20:00",
+      "venue": "GBK BASKET HALL SENAYAN",
+      "official_source": "https://mddd.fncent.com/b/notice/66691",
+      "result": "已补全此前缺失的演出时间和场馆"
+    }
+  ],
+  "checked_events": [
+    "2026-11-07/08 FNC BAND KINGDOM IN TAIPEI",
+    "2026-11-10/11/12/17/18 [Still] video call and fansign events",
+    "2026-11-14/15 Awesome Stage in Busan",
+    "2026-11-21 &CON5 IN KAOHSIUNG",
+    "2026-12-05 &CON5 IN MACAU",
+    "2026-12-12/13 FNC KINGDOM IN YOKOHAMA",
+    "2026-12-24/25/26 Once Upon a Snowball in Seoul"
+  ],
+  "unreadable_sources": [
+    "X / Twitter",
+    "Instagram",
+    "Weverse",
+    "YouTube official schedule feed"
+  ],
+  "notes": [
+    "官方网页搜索结果及公开公告可核实的活动已录入 data.json。",
+    "日本官网 schedule 页面本次显示当前没有可读行程条目；其新闻公告仍可用于核对巡演信息。",
+    "社交媒体未能稳定直接读取，故不将未经双重核实的社媒线索加入 confirmed。",
+    "这次是人工触发的一次性核查；没有启动 GitHub Actions 定时任务，也没有触发 ChatGPT 主动推送。"
+  ]
+}
