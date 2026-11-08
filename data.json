@@ -1,74 +1,8 @@
 {
-  "updated": "2026-11-07T23:03:46+08:00",
-  "updated_label": "2026-11-07 23:03 北京时间",
-  "changes": [
-    {
-      "id": "2026-11-03-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-03 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-04-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-04 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-05-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-05 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-07-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-07 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-08-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-08 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-10-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-10 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-11-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-11 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-12-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-12 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-14-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-14 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-15-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-15 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-17-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-17 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-18-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-18 FNC Official Twitter"
-    },
-    {
-      "id": "2026-11-21-fnc-official-twitter",
-      "kind": "new",
-      "text": "新增官方行程：2026-11-21 FNC Official Twitter"
-    }
-  ],
-  "changes_note": "",
+  "updated": "2026-11-08T15:53:41+08:00",
+  "updated_label": "2026-11-08 15:53 北京时间",
+  "changes": [],
+  "changes_note": "本次未发现新增或变更。",
   "unreadable_sources": [
     "官方 Weverse（需先核验官方社区入口并接入读取方式）",
     "官方 YouTube（未配置官方 API）",
