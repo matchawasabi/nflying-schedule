@@ -2,9 +2,6 @@ name: Update N.Flying schedule
 
 on:
   workflow_dispatch:
-  schedule:
-    # 09:37 and 16:37 Beijing time (UTC+8)
-    - cron: "37 1,8 * * *"
 
 permissions:
   contents: write
