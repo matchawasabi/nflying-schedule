@@ -66,18 +66,21 @@ a { color: inherit; }
 
 /* ── 字标 ── */
 header.top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
-.mark { display: grid; gap: 4px; }
+.mark { display: grid; gap: 4px; min-width: 0; }
 .mark .kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: .28em; color: var(--muted); text-transform: uppercase; }
 .mark h1 {
   margin: 0; font-family: var(--font-display); font-weight: 900; text-transform: uppercase;
   font-size: clamp(52px, 9vw, 104px); line-height: .82; letter-spacing: .01em;
 }
 .mark h1 .logo { display: block; height: clamp(54px, 8vw, 92px); width: auto; max-width: 100%; overflow: visible; margin: 6px 0 8px; filter: drop-shadow(0 0 22px rgba(234,58,47,.28)); }
-.mark .sub { display: flex; gap: 12px; align-items: baseline; font-size: 15px; font-weight: 700; }
+.mark .sub { display: flex; flex-wrap: nowrap; gap: 10px; align-items: baseline; font-size: 15px; font-weight: 700; white-space: nowrap; }
+.mark .sub strong { font-weight: 700; }
 .mark .sub span { color: var(--muted); font-weight: 400; font-size: 13px; }
 .meta { display: grid; justify-items: end; gap: 10px; }
 .updated { font-family: var(--font-mono); font-size: 12px; color: var(--muted); letter-spacing: .04em; }
 .updated b { color: var(--paper); font-weight: 700; }
+.update-plan { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.updated { white-space: nowrap; }
 .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: rgba(255,255,255,.03); }
 .seg button { border: 0; background: transparent; padding: 5px 13px; border-radius: 999px; cursor: pointer; font-size: 12.5px; color: var(--muted); }
 .seg button[aria-pressed="true"] { background: var(--paper); color: var(--bg); font-weight: 700; }
@@ -253,7 +256,9 @@ footer .share-only { color: var(--paper); font-weight: 700; }
 }
 @media (max-width: 640px) {
   .wrap { padding: 20px 16px 40px; gap: 18px; }
-  .meta { justify-items: start; }
+  header.top { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .mark .sub { gap: 10px; }
+  .meta { justify-items: start; gap: 7px; }
   .summary { grid-template-columns: 1fr; }
   .grid { gap: 3px; }
   .cal { padding: 12px; }
@@ -271,11 +276,6 @@ footer .share-only { color: var(--paper); font-weight: 700; }
   .day, .chip { transition: border-color .15s, background-color .15s, opacity .15s; }
 }
 
-.gpt-data-tools {display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin:10px 0 14px;color:var(--muted,#aaa);font-size:12px}
-.gpt-data-tools button {font:inherit;color:#eee;background:#242424;border:1px solid #565656;border-radius:5px;padding:6px 10px;cursor:pointer}
-.gpt-data-tools button:hover {border-color:#ea3a2f;color:#fff}
-.gpt-data-tools #gpt-status {max-width:100%;overflow-wrap:anywhere}
-.share .gpt-data-tools {display:none}
 </style>
 </head>
 <body>
@@ -296,10 +296,11 @@ M224 230C224 229 224 226 224 225C225 225 226 224 226 223C227 221 230 215 234 208
 M1027 182C1028 181 1031 176 1032 170C1032 169 1033 168 1033 167C1034 166 1034 165 1034 165C1034 165 1034 163 1035 162C1037 157 1038 153 1038 150C1039 147 1039 147 1037 146C1036 144 1035 144 1031 144C1028 144 1021 143 1016 144C1006 144 1006 144 1003 145C1000 147 999 148 997 152C996 154 995 156 995 157C995 157 994 158 994 159C994 160 993 163 992 165C990 171 988 177 989 179C990 180 992 182 994 182C995 182 1003 182 1011 182C1023 182 1026 182 1027 182Z
 M724 77C724 76 724 76 724 74C724 73 725 72 725 71C725 71 726 70 726 69C726 68 727 65 728 62C729 60 730 58 730 57C730 56 731 53 732 51C733 49 734 46 734 45C734 44 735 43 735 42C736 41 736 40 736 39C736 39 736 38 737 37L738 36L764 36C795 36 793 35 790 43C789 45 788 48 788 49C788 50 787 51 787 52C787 52 786 53 786 54C786 55 785 58 784 60C783 63 782 65 782 66C781 70 779 76 778 77L777 78L751 78L725 78L724 77Z"/>
 </svg></h1>
-      <div class="sub">行程日历 <span>엔플라잉</span><span>GPT 追踪任务 10:00 / 17:00（北京时间）</span></div>
+      <div class="sub"><strong>行程日历</strong><span lang="ko">엔플라잉</span></div>
     </div>
     <div class="meta">
       <div class="updated" id="updated">LOADING…</div>
+      <div class="update-plan">每日 15:00 更新（北京时间）</div>
       <div class="seg" role="group" aria-label="时间显示">
         <button type="button" id="tz-bj" aria-pressed="true">北京时间</button>
         <button type="button" id="tz-off" aria-pressed="false">当地时间</button>
@@ -307,12 +308,6 @@ M724 77C724 76 724 76 724 74C724 73 725 72 725 71C725 71 726 70 726 69C726 68 72
     </div>
   </header>
 
-  <div class="gpt-data-tools" aria-label="行程数据管理">
-    <span id="gpt-status">初始数据来自 Claude 导出包；导入 GPT 更新后的完整 JSON。</span>
-    <button id="gpt-import" type="button">导入最新数据</button>
-    <button id="gpt-export" type="button">导出 JSON</button>
-    <input id="gpt-file" type="file" accept=".json,application/json" hidden>
-  </div>
   <section class="summary" aria-label="摘要">
     <div class="card tile next" id="tile-next"></div>
     <div class="card tile" id="tile-ticket"></div>
@@ -395,7 +390,7 @@ function mbPrefix(e) { const ms = membersOf(e); return ms.length ? `<span class=
 
 function renderTop() {
   const D = state.data;
-  document.getElementById("updated").innerHTML = zh(`UPDATED <b>${esc(String(D.updated_label || D.updated).replace(/\s*[（(][上下]午场[）)]/, ""))}</b>`);
+  document.getElementById("updated").innerHTML = `更新日期 <b>${esc(String(D.updated_label || D.updated || "").slice(0,10))}</b>`;
 
   const nx = sorted(D.events.filter(e => e.date >= state.today && e.cat !== "ticket" && live(e)))[0];
   const tn = document.getElementById("tile-next");
@@ -557,44 +552,6 @@ function setTZ(bj) {
 }
 
 
-const GPT_KEY = "nflying-gpt-calendar-v1";
-function validateGPTData(d) {
-  if (!d || typeof d !== "object" || !Array.isArray(d.events) || !Number.isFinite(Date.parse(d.updated))) throw new Error("不是完整的行程 JSON");
-  const ids = new Set();
-  for (const e of d.events) {
-    if (!e || typeof e.id !== "string" || ids.has(e.id) || !/^\d{4}-\d{2}-\d{2}$/.test(e.date) || typeof e.title !== "string" || !Object.prototype.hasOwnProperty.call(CATS,e.cat) || !Array.isArray(e.sources) || !e.sources.length) throw new Error("行程字段不完整、ID 重复或缺少来源");
-    if (!e.sources.every(s => s && typeof s.label === "string" && typeof s.url === "string" && /^https?:\/\//i.test(s.url))) throw new Error("来源链接格式不正确");
-    ids.add(e.id);
-  }
-  if (d.changes && !Array.isArray(d.changes)) throw new Error("changes 格式错误");
-  return d;
-}
-function gptStatus(msg){document.getElementById("gpt-status").textContent=msg;}
-function applyGPTData(d) {
-  state.data=validateGPTData(d);
-  state.changeMap={};
-  (d.changes||[]).forEach(c=>{if(c&&c.id)state.changeMap[c.id]=c.kind;});
-  renderTop(); rerender(); renderFoot();
-}
-function bindGPTTools() {
-  document.getElementById("gpt-import").addEventListener("click",()=>document.getElementById("gpt-file").click());
-  document.getElementById("gpt-file").addEventListener("change",async ev=>{
-    try {
-      const f=ev.target.files[0]; if(!f)return;
-      const d=validateGPTData(JSON.parse(await f.text()));
-      if(Date.parse(d.updated)<Date.parse(state.data.updated) && !confirm("这份数据比当前数据旧，仍要导入吗？"))return;
-      applyGPTData(d);
-      try {localStorage.setItem(GPT_KEY,JSON.stringify(d));gptStatus(`已导入 ${d.events.length} 条行程，并保存到当前浏览器。`);}
-      catch (_) {gptStatus(`已导入 ${d.events.length} 条行程；当前浏览器无法保存，刷新后需重新导入。`);}
-    } catch(err){gptStatus("导入失败："+err.message);}
-    finally {ev.target.value="";}
-  });
-  document.getElementById("gpt-export").addEventListener("click",()=>{
-    const url=URL.createObjectURL(new Blob([JSON.stringify(state.data,null,2)],{type:"application/json"}));
-    const a=document.createElement("a");a.href=url;a.download="nflying-data.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-  });
-}
-
 async function init() {
   try {
     const inline = document.getElementById("nf-data").textContent.trim();
@@ -612,10 +569,6 @@ async function init() {
     document.querySelector(".wrap").insertAdjacentHTML("beforeend", `<div class="card err">行程数据没有载入（${esc(err.message)}）。请刷新页面重试。</div>`);
     return;
   }
-  try {
-    const saved=localStorage.getItem(GPT_KEY);
-    if(saved){const d=validateGPTData(JSON.parse(saved)); if(Date.parse(d.updated)>=Date.parse(state.data.updated)){state.data=d;gptStatus(`已载入浏览器保存的 ${d.events.length} 条行程。`);}}
-  } catch (_) {}
   state.share = location.hash === "#share";
   if (state.share) document.documentElement.classList.add("share");
   state.today = todayBJ();
@@ -625,7 +578,6 @@ async function init() {
   document.getElementById("tz-bj").addEventListener("click", () => setTZ(true));
   document.getElementById("tz-off").addEventListener("click", () => setTZ(false));
   renderTop(); renderFilters(); renderMonths(); renderDay(); renderFortnight(); renderFoot();
-  bindGPTTools();
   document.documentElement.setAttribute("data-ready", "1");
 }
 init();
