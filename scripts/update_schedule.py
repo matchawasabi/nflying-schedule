@@ -123,6 +123,31 @@ def fetch_japan():
                 review.append({"source":url, "reason":"日本官网存在日期内容，需人工确认结构", "excerpt":text[:400]})
     return found, unreadable, review
 
+def normalize_signing_session(event):
+    if event.get("cat") not in ("sign_online", "sign_offline"):
+        return
+
+    def replace_session(match):
+        number = int(match.group(1))
+        digits = "零一二三四五六七八九"
+        if number < 10:
+            label = digits[number]
+        elif number < 100:
+            tens, ones = divmod(number, 10)
+            label = (digits[tens] if tens > 1 else "") + "十" + (digits[ones] if ones else "")
+        else:
+            label = str(number).translate(str.maketrans("0123456789", digits))
+        return f"第{label}场"
+
+    for field in ("title", "short", "note", "ticket"):
+        if event.get(field):
+            event[field] = re.sub(
+                r"(?<![\d:./-])(?:第\s*)?([1-9１-９][0-9０-９]*)\s*(?:部|부|회차)(?!器件|分|門|门)",
+                replace_session,
+                event[field],
+            )
+
+
 def main():
     now = datetime.now(TZ)
     old = json.loads(DATA.read_text(encoding="utf-8")) if DATA.exists() else {
@@ -150,8 +175,11 @@ def main():
     # Existing data remains the baseline; refresh matching IDs with current
     # official records. This avoids deleting future dates if a source is down.
     by_id = {e["id"]: e for e in old.get("events", []) if isinstance(e,dict) and e.get("id")}
+    for event in by_id.values():
+        normalize_signing_session(event)
     changes = []
     for e in official:
+        normalize_signing_session(e)
         prev = by_id.get(e["id"])
         if prev is None:
             changes.append({"id":e["id"], "kind":"new", "text":f"新增官方行程：{e['date']} {e['title']}"})

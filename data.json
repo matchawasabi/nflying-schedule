@@ -10,12 +10,12 @@
     {
       "id": "2026-11-28-photo",
       "kind": "changed",
-      "text": "11/28 15:00（北京）拍照活动明确为第1部，主办 Hello Live。"
+      "text": "11/28 15:00（北京）拍照活动明确为第一场，主办 Hello Live。"
     },
     {
       "id": "2026-11-28-photo-part2",
       "kind": "new",
-      "text": "11/28 新补录 Hello Live 1:1 拍照第2部，北京时间16:00。"
+      "text": "11/28 新补录 Hello Live 1:1 拍照第二场，北京时间16:00。"
     },
     {
       "id": "2026-11-29-vc",
@@ -553,8 +553,8 @@
       "tz": "KST",
       "bj": "15:00",
       "cat": "sign_offline",
-      "title": "9th Mini [Still] 1:1 拍照活动（Hello Live 第1部）",
-      "short": "1:1 拍照 第1部",
+      "title": "9th Mini [Still] 1:1 拍照活动（Hello Live 第一场）",
+      "short": "1:1 拍照 第一场",
       "ticket": "应募型",
       "status": "confirmed",
       "note": "主办：Hello Live；具体场地仅通知中签者",
@@ -576,8 +576,8 @@
       "tz": "KST",
       "bj": "16:00",
       "cat": "sign_offline",
-      "title": "9th Mini [Still] 1:1 拍照活动（Hello Live 第2部）",
-      "short": "1:1 拍照 第2部",
+      "title": "9th Mini [Still] 1:1 拍照活动（Hello Live 第二场）",
+      "short": "1:1 拍照 第二场",
       "ticket": "应募型",
       "status": "confirmed",
       "note": "主办：Hello Live；具体场地仅通知中签者",
