@@ -2,11 +2,11 @@
   "updated": "2026-11-24T18:17:40+08:00",
   "updated_label": "2026-11-24 18:17 北京时间",
   "changes": [],
-  "changes_note": "本次部分核查，尚无达到入录标准的新增、变更或取消；保留既有行程及上次核查时间。",
+  "changes_note": "部分核查：11/27、11/29签售时间及泗水演出与基准一致；未确认其他变动。",
   "unreadable_sources": [
-    "FNC 11月月历直读 Internal Error；2026年11月至2027年5月索引查询未取得完整月历，未逐日核查",
-    "日本官网仅读取11月日程页",
-    "五成员专项、其他签售平台、Weverse、YouTube、FNC NEWS/GLOBAL 未完成；X/Instagram 按要求未配置"
+    "FNC 11月月历直读 Internal Error；11月至2027年5月英文索引已查询，仅11月取得具体日程，未完整逐日核查",
+    "日本官网11月日程已读取；韩语逐月、其他签售平台、五成员专项、Weverse、FNC NEWS/GLOBAL 未完成；X/Instagram未配置",
+    "固定网站 data.json 读取 Internal Error"
   ],
   "events": [
     {
@@ -951,6 +951,6 @@
       ]
     }
   ],
-  "last_run_at": "2026-11-27T09:12:00+08:00",
+  "last_run_at": "2026-11-27T14:56:17+08:00",
   "run_status": "partial"
 }
