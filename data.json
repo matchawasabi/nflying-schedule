@@ -1,43 +1,12 @@
 {
   "updated": "2026-11-24T18:17:40+08:00",
   "updated_label": "2026-11-24 18:17 北京时间",
-  "changes": [
-    {
-      "id": "2026-11-28-vc",
-      "kind": "changed",
-      "text": "11/28 视频签售确认主办为 Hello Live（第5场）。"
-    },
-    {
-      "id": "2026-11-28-photo",
-      "kind": "changed",
-      "text": "11/28 15:00（北京）拍照活动明确为第一场，主办 Hello Live。"
-    },
-    {
-      "id": "2026-11-28-photo-part2",
-      "kind": "new",
-      "text": "11/28 新补录 Hello Live 1:1 拍照第二场，北京时间16:00。"
-    },
-    {
-      "id": "2026-11-29-vc",
-      "kind": "changed",
-      "text": "11/29 视频签售确认主办为 Hello Live（第6场）。"
-    },
-    {
-      "id": "2026-11-29-fs",
-      "kind": "changed",
-      "text": "11/29 线下签售确认主办为 Hello Live（第6场）。"
-    }
-  ],
-  "changes_note": "首次 GPT 测试：补录1条行程、补全4条信息；FNC 月历无法读取，未全面核验；其余基准记录保留，不代表已逐项重新核实。",
+  "changes": [],
+  "changes_note": "本次部分核查，尚无达到入录标准的新增、变更或取消；保留既有行程及上次核查时间。",
   "unreadable_sources": [
-    "FNC 月历：2026年11月至2027年5月全部访问失败，日视图未能核对",
-    "FNC 韩国公告与 NEWS：人机验证；GLOBAL 为旧缓存",
-    "日本官网首页无法直读，schedule 页返回2026年7月旧缓存；已通过搜索找到 FNC KINGDOM 官方公告",
-    "X、Instagram 暂不配置，未主动抓取",
-    "Weverse：未取得当期活动公告；YouTube：未取得未来行程信息",
-    "Hello Live、Whosfan Store 部分详情页无法直读；本次使用官方索引中可见的信息核实",
-    "Mini Record 未检索到相关活动；Withmuu、Ktown4u 未发现符合入录标准的新增签售",
-    "未完成五名成员各关键词逐项检索"
+    "FNC 11月月历直读 Internal Error；2026年11月至2027年5月索引查询未取得完整月历，未逐日核查",
+    "日本官网仅读取11月日程页",
+    "五成员专项、其他签售平台、Weverse、YouTube、FNC NEWS/GLOBAL 未完成；X/Instagram 按要求未配置"
   ],
   "events": [
     {
@@ -981,5 +950,7 @@
         }
       ]
     }
-  ]
+  ],
+  "last_run_at": "2026-11-27T09:12:00+08:00",
+  "run_status": "partial"
 }
