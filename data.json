@@ -1,12 +1,27 @@
 {
   "updated": "2026-11-24T18:17:40+08:00",
   "updated_label": "2026-11-24 18:17 北京时间",
-  "changes": [],
-  "changes_note": "部分核查：11/27、11/29签售时间及泗水演出与基准一致；未确认其他变动。",
+  "changes": [
+    {
+      "id": "2026-12-19-taipei-fs",
+      "kind": "new",
+      "text": "新增12/19 19:00 台北线下签售会。"
+    },
+    {
+      "id": "2026-12-12-kingdom",
+      "kind": "changed",
+      "text": "2026-12-12 横滨场补充周边销售时间。"
+    },
+    {
+      "id": "2026-12-13-kingdom",
+      "kind": "changed",
+      "text": "2026-12-13 横滨场补充周边销售时间。"
+    }
+  ],
+  "changes_note": "部分核查：新增台北签售，补充横滨周边销售；其余旧记录保留。",
   "unreadable_sources": [
-    "FNC 11月月历直读 Internal Error；11月至2027年5月英文索引已查询，仅11月取得具体日程，未完整逐日核查",
-    "日本官网11月日程已读取；韩语逐月、其他签售平台、五成员专项、Weverse、FNC NEWS/GLOBAL 未完成；X/Instagram未配置",
-    "固定网站 data.json 读取 Internal Error"
+    "FNC 11月月历直读 Internal Error；11月至次年5月英文索引已查询，未取得完整月历",
+    "韩语逐月、逐日、签售店逐一及五成员逐项检索未完成；Weverse 未调用；X/Instagram 未配置"
   ],
   "events": [
     {
@@ -690,10 +705,15 @@
         {
           "label": "FNC 官网日历",
           "url": "https://www.fncent.com/NFLYING/b/schedule"
+        },
+        {
+          "label": "日本官网 11/27 周边公告",
+          "url": "https://nflying-official.jp/news/detail/906"
         }
       ],
       "short": "横滨 FNC KINGDOM",
-      "city": "横滨"
+      "city": "横滨",
+      "note": "场外周边销售北京时间10:00–15:00，仅现金，无票亦可购买，演出结束后不售。"
     },
     {
       "id": "2026-12-13-kingdom",
@@ -714,10 +734,35 @@
         {
           "label": "FNC 官网日历",
           "url": "https://www.fncent.com/NFLYING/b/schedule"
+        },
+        {
+          "label": "日本官网 11/27 周边公告",
+          "url": "https://nflying-official.jp/news/detail/906"
         }
       ],
       "short": "横滨 FNC KINGDOM",
-      "city": "横滨"
+      "city": "横滨",
+      "note": "场外周边销售北京时间09:00–14:00，仅现金，无票亦可购买，演出结束后不售。"
+    },
+    {
+      "id": "2026-12-19-taipei-fs",
+      "date": "2026-12-19",
+      "time": "19:00",
+      "tz": "当地",
+      "bj": "19:00",
+      "cat": "sign_offline",
+      "title": "9th Mini [Still] 发售纪念线下签售会（台北）",
+      "short": "台北线下签售",
+      "city": "台北",
+      "ticket": "",
+      "status": "confirmed",
+      "note": "FNC 官方搜索索引确认；具体场地及应募信息待核实。",
+      "sources": [
+        {
+          "label": "FNC 官方日历搜索索引 12/19",
+          "url": "https://fncent.com/?admin_select_mc_id=&admin_select_mc_id_cate=&bid=schedule&day=19&m=bbs&mod=list&month=12&r=&year=2026"
+        }
+      ]
     },
     {
       "id": "2026-12-23-sg2027-ship",
@@ -951,6 +996,6 @@
       ]
     }
   ],
-  "last_run_at": "2026-11-27T14:56:17+08:00",
+  "last_run_at": "2026-11-28T15:04:25+08:00",
   "run_status": "partial"
 }
